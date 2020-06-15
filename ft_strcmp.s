@@ -1,4 +1,4 @@
-		global 		_ft_strcmp
+		global 		_ft_strcmp:function
 		section		.text
 
 _ft_strcmp:

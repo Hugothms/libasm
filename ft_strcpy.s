@@ -1,4 +1,4 @@
-		global 		_ft_strcpy
+		global 		_ft_strcpy:function
 
 		section		.text
 _ft_strcpy:

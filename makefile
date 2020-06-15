@@ -6,7 +6,7 @@
 #    By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/15 13:33:22 by hthomas           #+#    #+#              #
-#    Updated: 2020/06/15 13:36:02 by hthomas          ###   ########.fr        #
+#    Updated: 2020/06/15 13:38:30 by hthomas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ SRCS 		=	ft_strlen.s			\
 all:		$(NAME)
 
 $(NAME):	${OBJS}
-	ar rc	$(NAME) ${OBJS}
-	ranlib	$(NAME)
+	ar rc $(NAME) ${OBJS}
+	ranlib $(NAME)
 
 .s.o:
 	${CC} ${FLAGS} $<
