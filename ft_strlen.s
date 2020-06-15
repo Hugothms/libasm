@@ -1,7 +1,8 @@
 		global		_ft_strlen
 
 		section		.text
-_ft_strlen: 	mov		rax, 0
+_ft_strlen:
+		mov		rax, 0
 		jmp		compare
 incr:
 		inc		rax
