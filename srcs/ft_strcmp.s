@@ -1,17 +1,17 @@
-		global 		_ft_strcmp:function
+		global 		_ft_strcmp
 		section		.text
 
 _ft_strcmp:
 		push 	r8
 		push 	r9
 		push 	rcx
-		mov  	r8, rdi
-		mov  	r9, rsi
+		mov  	r8, rdi 
+		mov  	r9, rsi  
 		mov  	rcx, -1
 
 comp:
 		inc  	rcx
-		cmp  	byte [r8 + rcx], 0
+		cmp  	byte [r8 + rcx], 0 
 		je   	end
 		mov  	dl, byte [r8 + rcx]
 		cmp  	dl, byte [r9 + rcx]
