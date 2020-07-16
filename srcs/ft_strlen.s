@@ -1,6 +1,6 @@
-		global		_ft_strlen
+global		_ft_strlen
 
-		section		.text
+section		.text
 _ft_strlen:
 		mov		rax, 0
 		jmp		compare
@@ -11,6 +11,3 @@ incr:
 compare:
 		cmp		BYTE [rdi + rax], 0
 		jne		incr
-
-done:
-		ret
