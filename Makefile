@@ -6,7 +6,7 @@
 #    By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/15 13:33:22 by hthomas           #+#    #+#              #
-#    Updated: 2020/07/16 20:08:02 by hthomas          ###   ########.fr        #
+#    Updated: 2020/07/25 17:13:09 by hthomas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ NASM		=	nasm
 CC			=	gcc
 FLAGS		=	-f elf64
 SRCS 		=	srcs/ft_strlen.s			\
-				srcs/ft_strcpy.s
-				# srcs/ft_strcmp.s			\
-				# srcs/ft_write.s			\
+				srcs/ft_strcpy.s			\
+				srcs/ft_write.s				\
+				srcs/ft_strcmp.s			
 				# srcs/ft_read.s			\
 				# srcs/ft_strdup.s
 
