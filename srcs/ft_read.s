@@ -1,14 +1,14 @@
 section	.text
-global	ft_write
+global	ft_read
 extern	__errno_location
 
 ;rdi first arg (fd), rsi second arg (*buf) and rdx third arg (nbytes)
 
-ft_write:
-	mov	rax, 1				;write= 4 and MacOX = 0x2000000 ?
-	syscall					;system call
+ft_read:
+	mov rax, 0			;read = 3 and MacOX = 0x2000000 ?
+	syscall
 	cmp	rax, 0
-	jl erreur				;if CF (carry flag), then error
+	jl erreur
 	ret
 
 erreur:
@@ -16,5 +16,5 @@ erreur:
 	mov	rdi, rax
 	call __errno_location wrt ..plt
 	mov [rax], rdi
-	mov rax, -1
+	mov	rax, -1
 	ret

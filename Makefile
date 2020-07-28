@@ -6,7 +6,7 @@
 #    By: hthomas <hthomas@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/15 13:33:22 by hthomas           #+#    #+#              #
-#    Updated: 2020/07/25 17:13:09 by hthomas          ###   ########.fr        #
+#    Updated: 2020/07/28 20:48:28 by hthomas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ FLAGS		=	-f elf64
 SRCS 		=	srcs/ft_strlen.s			\
 				srcs/ft_strcpy.s			\
 				srcs/ft_write.s				\
-				srcs/ft_strcmp.s			
-				# srcs/ft_read.s			\
-				# srcs/ft_strdup.s
+				srcs/ft_strcmp.s			\
+				srcs/ft_read.s				\
+				srcs/ft_strdup.s
 
 all:		$(NAME)
 
