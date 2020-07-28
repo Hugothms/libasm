@@ -1,35 +1,40 @@
 section	.text
-global 	ft_strcmp
-
-;rdi first arg (fd), rsi second arg (*buf) and rdx third arg (nbytes)
+global	ft_strcmp
 
 ft_strcmp:
-	push 	r8
-	push 	r9
-	push 	rcx
-	mov  	r8, rdi
-	mov  	r9, rsi
-	mov  	rcx, -1
+	mov	rdx, 0					;initialize rdx to 0
+	mov	rcx, 0
+	mov	r8, 0
 
 comp:
-	inc  	rcx
-	cmp  	byte [r8 + rcx], 0 
-	je   	end
-	mov  	dl, byte [r8 + rcx]
-	cmp  	dl, byte [r9 + rcx]
-	je   	comp
+	cmp byte [rdi + rdx], 0		;compare s1[i] to '\0'
+	jz	end
+	cmp	byte [rsi + rdx], 0
+	jz	end
+	mov	cl,	byte [rdi + rdx]	;put s1[i] in rcx low
+	mov	r8b, byte [rsi + rdx]	;put s2[i] in r8 low
+	cmp	rcx, r8					;compare rcx and r8
+	jnz	end						;if == 0 go to end
+	inc	rdx						;else increment rdx (i++);
+	jmp	comp;					;loop
 
 end:
+	mov	cl,	byte [rdi + rdx]	;put s1[i] in rcx
+	mov	r8b, byte [rsi + rdx]	;put s2[i] in r8
+	sub	rcx, r8					;substract s1[i] to s2[i] and put the result in rcx
+	cmp	rcx, 0
+	jz	null
+	jg	greater					;jg = jmp if greater
+	jmp	smaller
 
-	xor  	rax, rax
-	mov  	al, byte [r8 + rcx]
-	sub  	al, byte [r9 + rcx]
-	jnc  	end2
-	neg  	al
-	neg  	eax
+null:
+	mov	rax, 0					;return 0 or..
+	ret
 
-end2:
-	pop 	rcx
-	pop 	r9
-	pop 	r8
+greater:
+	mov	rax, 1					;return 1 or..
+	ret
+
+smaller:
+	mov	rax, -1					;return -1
 	ret

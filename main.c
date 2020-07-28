@@ -65,14 +65,14 @@ static void test_write()
     int ret = 0;
     char *str = "|Test FT_WRITE|";
     printf("%sTest FT_WRITE:%s\n", CYAN, NC);
-    ft_write(1, "Me:   ", 6);
+    ft_write(1, "Me:\t", 5);
     ret = ft_write(1, str, ft_strlen(str));
     printf("\nReturn = %d ", ret);
-    printf("Errno:%s %s %s\n\n",GREEN, strerror(errno), NC);
-    write(1, "Base: ", 6);
+    printf("\nErrno:%s\t%s%s\n",GREEN, strerror(errno), NC);
+    write(1, "\nBase:\t", 7);
     ret = write(1, str, strlen(str));
     printf("\nReturn = %d ", ret);
-    printf("Errno:%s %s %s\n",GREEN, strerror(errno), NC);
+    printf("\nErrno:%s\t%s%s\n",GREEN, strerror(errno), NC);
     printf("%s#--------------------#%s\n", RED, NC);
 }
 
@@ -84,7 +84,7 @@ static void test_read()
     int ret = 1;
     int nbyte = 5;
     char buf[nbyte + 1];
-    printf("Me\t:");
+    printf("Me:\t");
     while (ret > 0)
     {
         ret = ft_read(fd, buf, nbyte);
@@ -93,9 +93,9 @@ static void test_read()
             printf("%s", buf);
     }
     printf("\nReturn: %d ", ret);
-    printf("Errno:%s %s %s",GREEN, strerror(errno), NC);
+    printf("\nErrno:%s\t%s%s",GREEN, strerror(errno), NC);
     ret = 1;
-    printf("\n\nBase\t:");
+    printf("\n\nBase:\t");
     while (ret > 0)
     {
         ret = ft_read(fd2, buf, nbyte);
@@ -104,7 +104,7 @@ static void test_read()
             printf("%s", buf);
     }
     printf("\nReturn: %d ", ret);
-    printf("Errno:%s %s %s",GREEN, strerror(errno), NC);
+    printf("\nErrno:%s\t%s%s",GREEN, strerror(errno), NC);
     printf("\n%s#--------------------#%s\n", RED, NC);
 }
 
